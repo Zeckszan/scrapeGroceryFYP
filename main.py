@@ -29,9 +29,8 @@ if __name__ == '__main__':
         "product_name": '.product-list.product-list--collection .product-item__title.text--strong.link',
         "price": '.product-list.product-list--collection .price',
     }
-    # result = start_scraping_jaya(urlj, urlj2, selectorsj)
-
-    # database.child("jaya grocer").set(result)
+    result = start_scraping_jaya(urlj, urlj2, selectorsj)
+    database.child("jaya grocer").set(result)
 
     # Scrape lotus
     urll = "https://www.lotuss.com.my/en/category/fresh-produce/fruits?sort=relevance:DESC"
@@ -41,8 +40,8 @@ if __name__ == '__main__':
         "product_name": 'product-title',
         "price": 'GCRGw',
     }
-    # result = start_scraping_lotus(urll,urll2, selectorsl)
-    # database.child("lotus").set(result)
+    result = start_scraping_lotus(urll,urll2, selectorsl)
+    database.child("lotus").set(result)
 
     urlvgw = "https://vgw.bites.com.my/collections/fruits"
     urlvgw2 = "https://vgw.bites.com.my/collections/vegetables"
@@ -50,16 +49,8 @@ if __name__ == '__main__':
         "product_name": 'cd chp selectorgadget_suggested',
         "price": 'GCRGw',
     }
-    # result = start_scraping_vgw(urlvgw,urlvgw2, selectorsv)
-    # database.child("village grocer").set(result)
-
-    url3 = "https://myaeon2go.com/products/category/7644592/fruits"
-
-    selectors3 = {
-        "product_name": "nhQRizN1GA1WpbpCy_qn g-brand-text",
-        "price": '//*[@id="__layout"]/div/div[2]/div[1]/div[2]/div[1]/div[2]/div/div/div[1]/div/span[1]',
-    }
-    results3 = start_scraping_aeon(url3, selectors3)
+    result = start_scraping_vgw(urlvgw,urlvgw2, selectorsv)
+    database.child("village grocer").set(result)
 
     print("success")
 

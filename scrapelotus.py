@@ -62,7 +62,6 @@ def get_to_process(url,shared_results, selectors):
         #product_prices = driver.find_elements(By.CLASS_NAME, selectors.get("price"))
 
         for x in range(len(product_names)):
-            #print(x.get_attribute("innerText"))
             print(product_names[x].text)
             print(product_prices[x].text)
             shared_results.append({
